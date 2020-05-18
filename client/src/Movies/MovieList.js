@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import MovieCard from './MovieCard'
 
 const MovieList = props => {
-  
-  
   
   return (
 
@@ -19,14 +18,14 @@ const MovieList = props => {
 }
 
 function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
+  //const { title, director, metascore, stars } = movie;
 
-  const { url } = useRouteMatch()
+  // const { url } = useRouteMatch()
 
-  console.log(url)
+  // console.log(url)
   return (
     <Link to={`/movies/${movie.id}`}>
-      <div className="movie-card">
+      {/* <div className="movie-card">
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
@@ -41,7 +40,8 @@ function MovieDetails({ movie }) {
             {star}
           </div>
         ))}
-      </div>
+      </div> */}
+      <MovieCard movie={movie}/>
     </Link>
   );
 }
